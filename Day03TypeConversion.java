@@ -1,19 +1,11 @@
 public class Day03TypeConversion {
     public static void main(String[] args) {
-        // CASTS
+        // take an integer as a command line argument, and generate (then print) a random
+        // number (integer) between 0 and the supplied number
 
-        // converts to int by truncating decimals
-        // predict the output
-        System.out.println((int) 2.71828); // 2
-        System.out.println((int) -2.71828); // -2
-        System.out.println();
+        int maxVal = Integer.parseInt(args[0]);
+        int randomInt = (int) (Math.random() * maxVal);
 
-        System.out.println((int) Math.round(2.71828)); // 3
-        System.out.println((int) Math.round(-2.71828)); // -3
-        System.out.println();
-
-        System.out.println(11 * (int) 0.25); // 0 (int)
-        System.out.println((int) 11 * 0.25); // 2.75 (double)
-        System.out.println((int) (11 * 0.25)); // 2 (int)
+        System.out.println(randomInt);
     }
 }
