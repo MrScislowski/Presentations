@@ -1,22 +1,19 @@
 public class Day03TypeConversion {
     public static void main(String[] args) {
-        // EXPLICIT (FUNCTIONS) CONVERSIONS
+        // CASTS
 
-        // parseInt, parseDouble, parseBoolean (useful for command line arguments)
-        // String -> int/double/boolean
-        int i1 = Integer.parseInt("31");
-        System.out.println(i1);
-        double d1 = Double.parseDouble("3.14159");
-        System.out.println(d1);
-        boolean b1 = Boolean.parseBoolean("true");
-        System.out.println(b1);
+        // converts to int by truncating decimals
+        // predict the output
+        System.out.println((int) 2.71828);
+        System.out.println((int) -2.71828);
+        System.out.println();
 
-        // Math.round
-        // double -> long (rounds; doesn't just always truncate decimal)
-        // I use int more often than long, so this function is frustrating to me
-        long l1 = Math.round(2.718);
-        System.out.println(l1);
+        System.out.println((int) Math.round(2.71828));
+        System.out.println((int) Math.round(-2.71828));
+        System.out.println();
 
-
+        System.out.println(11 * (int) 0.25);
+        System.out.println((int) 11 * 0.25);
+        System.out.println((int) (11 * 0.25));
     }
 }
