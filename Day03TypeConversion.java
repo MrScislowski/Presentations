@@ -1,26 +1,22 @@
 public class Day03TypeConversion {
     public static void main(String[] args) {
-        // AUTOMATIC (IMPLICIT) CONVERSIONS
+        // EXPLICIT (FUNCTIONS) CONVERSIONS
 
-        // int with int operations. Predict value and type of result...
-        System.out.println(2 + 3); // 5 (int)
-        System.out.println(2 - 3); // -1 (int)
-        System.out.println(2 * 3); // 6 (int)
-        System.out.println(2 / 3); // 0 (int)
+        // parseInt, parseDouble, parseBoolean (useful for command line arguments)
+        // String -> int/double/boolean
+        int i1 = Integer.parseInt("31");
+        System.out.println(i1);
+        double d1 = Double.parseDouble("3.14159");
+        System.out.println(d1);
+        boolean b1 = Boolean.parseBoolean("true");
+        System.out.println(b1);
 
-        // int with double operations
-        System.out.println(2 + 3.0); // 5.0 (double)
-        System.out.println(2 - 3.0); // -1.0 (double)
-        System.out.println(2 * 3.0); // 6.0 (double)
-        System.out.println(2 / 3.0); // 0.666666... (double)
+        // Math.round
+        // double -> long (rounds; doesn't just always truncate decimal)
+        // I use int more often than long, so this function is frustrating to me
+        long l1 = Math.round(2.718);
+        System.out.println(l1);
 
-        // String with number
-        System.out.println("2" + 2); // "22" (String)
-        System.out.println(2.0 + "2"); // "2.02" (String)
-
-        // multiple operations
-        System.out.println((7/2) * 2.0); // 6.0 (double)
-        System.out.println((7/2.0) * 2); // 7.0 (double)
 
     }
 }
