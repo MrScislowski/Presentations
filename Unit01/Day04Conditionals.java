@@ -1,16 +1,14 @@
 public class Day04Conditionals {
     public static void main(String[] args) {
-        // TwoSort
-        int a = Integer.parseInt(args[0]);
-        int b = Integer.parseInt(args[1]);
-
-        if (a < b) {
-            System.out.println(a + ", " + b);
+        // RandInt w/ error checking
+        if (args.length < 1) {
+            System.out.println("Please provide one command line argument");
         } else {
-            System.out.println(b + ", " + a);
+            int upperLimit = Integer.parseInt(args[0]);
+            int randInt = (int) (Math.random() * upperLimit);
+            System.out.println(randInt);
         }
 
-        // RandInt
 
         // IntOps
     }
