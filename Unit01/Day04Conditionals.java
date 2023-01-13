@@ -1,19 +1,20 @@
 public class Day04Conditionals {
     public static void main(String[] args) {
-        // answerCell
-        boolean isMorning = Boolean.parseBoolean(args[0]);
-        boolean isMom = Boolean.parseBoolean(args[1]);
-        boolean isAsleep = Boolean.parseBoolean(args[2]);
+        // caughtSpeeding
+        int speed = Integer.parseInt(args[0]);
+        boolean isBirthday = Boolean.parseBoolean(args[1]);
 
+        if (isBirthday) {
+            speed = speed - 5;
+        }
 
-        if (isAsleep) {
-            System.out.println(false);
+        if (speed <= 60) {
+            System.out.println(0);
+        } 
+        else if (speed <= 80) {
+            System.out.println(1);
         } else {
-            if (isMorning && !isMom) {
-                System.out.println(false);
-            } else {
-                System.out.println(true);
-            }
+            System.out.println(2);
         }
     }
 }
