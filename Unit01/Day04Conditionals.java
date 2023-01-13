@@ -5,12 +5,8 @@ public class Day04Conditionals {
         int b = Integer.parseInt(args[1]);
         int c = Integer.parseInt(args[2]);
 
-        if (a == b) {
-            if (c == a) {
-                System.out.println("equal");
-            } else {
-                System.out.println("not equal");
-            }
+        if (a == b && c == a) {
+            System.out.println("equal");
         } else {
             System.out.println("not equal");
         }
