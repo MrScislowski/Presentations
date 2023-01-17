@@ -16,5 +16,5 @@ public class Day04Conditionals {
         } else {
             System.out.println(2);
         }
-    }
+
 }
