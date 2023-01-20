@@ -1,13 +1,13 @@
 public class Day06Strings {
-    public static void main(String[] args) {
-        // helloName
-        // take a command line string, 
-        // print "hello " plus that string
+    public static void main(String[] args
+    ) {
+        // firstHalf
+        // take a command line string, which has even length
+        // print just the first half of the string
 
-        String firstPart = new String("hello ");
-        // String firstPart = "hello "; // also works (shorthand)
-        
-        String result = firstPart + args[0];
-        System.out.println(result);
+        String original = args[0];
+        int endIndex = original.length() / 2;
+        String firstHalf = original.substring(0, endIndex);
+        System.out.println(firstHalf);
     }
 }
