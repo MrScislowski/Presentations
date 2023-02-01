@@ -1,25 +1,24 @@
+import java.util.Arrays;
+
 public class Topic01StaticMethods {
 
-    // this static method doesn't actually manage to 
-    // modify the value passed into it
-    // primitive type variables can't be modified by
-    // a static method
-    public static void increaseBySeven(int num) {
-        num = num + 7;
-    }
-
-    public static int increasedBySeven(int num) {
-        int result = num + 7;
-        return result;
+    // static methods CAN change the values stored in an array
+    public static void sort(int[] items) {
+        if (items[0] <= items[1]) {
+            // do nothing
+        } else {
+            int temp = items[0];
+            items[0] = items[1];
+            items[1] = temp;
+        }
     }
 
     public static void main(String[] args) {
-        int a = 10;
-        System.out.println("a is " + a);
-        increaseBySeven(a);
-        System.out.println("a is " + a);
-        a = increasedBySeven(a);
-        System.out.println("a is " + a);
+        int[] a = new int[] {5, 2};
+        System.out.println(Arrays.toString(a));
+        sort(a);
+        System.out.println(Arrays.toString(a));
+
     }
 }
 
