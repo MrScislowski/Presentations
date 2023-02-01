@@ -1,48 +1,25 @@
 public class Topic01StaticMethods {
 
-    // 'return' halts method execution. This logic wouldn't work
-    // with print statements, since more than one boolean would
-    // be printed sometimes
-    public static boolean canSleepIn(boolean weekday, boolean vacation) {
-        if (vacation) {
-            return true;
-        }
-        if (!weekday) {
-            return true;
-        }
-        return false;
+    // this static method doesn't actually manage to 
+    // modify the value passed into it
+    // primitive type variables can't be modified by
+    // a static method
+    public static void increaseBySeven(int num) {
+        num = num + 7;
     }
 
-    public static double square(double x) {
-        double result = x * x;
+    public static int increasedBySeven(int num) {
+        int result = num + 7;
         return result;
-    }
-
-    // OVERLOADED FUNCTION
-    // (same name, different argument types)
-    public static int square(int x) {
-        int result = x * x;
-        return result;
-    }
-
-    public static double hypotenuse(double a, double b) {
-        double result = Math.sqrt(square(a) + square(b));
-        return result;
-    }
-
-    public static void printBanner() {
-        System.out.println("################################################################################");
-        System.out.println("  WELCOME   ");
-        System.out.println("################################################################################");
     }
 
     public static void main(String[] args) {
-        printBanner();
-        System.out.println("3 squared is " + square(3));
-        int area = square(3);
-        printBanner();
-        System.out.println("the hypotenuse of a 3-4-5 triangle is " + hypotenuse(3, 4));
-        printBanner();
+        int a = 10;
+        System.out.println("a is " + a);
+        increaseBySeven(a);
+        System.out.println("a is " + a);
+        a = increasedBySeven(a);
+        System.out.println("a is " + a);
     }
 }
 
