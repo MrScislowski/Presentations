@@ -23,16 +23,30 @@ public class Topic02WhileLoops {
         }
     }
 
+    public static void printPowersOfTwoUpToSomeNumber(int maxResult) {
+        int result = 1;
+        while (result <= maxResult) {
+            System.out.println(result);
+            result *= 2;
+        }
+    }
+
+
+
     public static void main(String[] args) {
         int maxPowerOfTwo = Integer.parseInt(args[0]);
+        int maxResult = Integer.parseInt(args[1]);
+
 
         // printTenHellos();
 
         // last line of printPowersOfTwo(31) is:
         // 2^31 = -2147483648
         // due to overflow
-        printPowersOfTwo(maxPowerOfTwo);
+        // printPowersOfTwo(maxPowerOfTwo);
+
+        printPowersOfTwoUpToSomeNumber(maxResult);
     }
 }
 
-// javac .\Topic02WhileLoops.java; java Topic02WhileLoops 28
+// javac .\Topic02WhileLoops.java; java Topic02WhileLoops 28 20
