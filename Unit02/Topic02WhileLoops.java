@@ -52,6 +52,17 @@ public class Topic02WhileLoops {
         return sum;
     }
 
+    public static boolean lucky13(int[] nums) {
+        int index = 0;
+        while (index < nums.length) {
+            if (nums[index] == 1 || nums[index] == 3) {
+                return false;
+            }
+            index = index + 1;
+        }
+        return true;
+    }
+
 
     public static void main(String[] args) {
         int maxPowerOfTwo = Integer.parseInt(args[0]);
@@ -72,3 +83,7 @@ public class Topic02WhileLoops {
 }
 
 // javac .\Topic02WhileLoops.java; java Topic02WhileLoops 28 20
+
+// codingBats that I like on this topic:
+// (Array-2 section)
+// countEvens, no14, matchUp, modThree, sameEnds, post4
