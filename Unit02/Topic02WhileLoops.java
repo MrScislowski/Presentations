@@ -31,6 +31,26 @@ public class Topic02WhileLoops {
         }
     }
 
+    public static int sum13(int[] nums) {
+        int sum = 0;
+        int index = 0;
+
+        while (index < nums.length) {
+            sum = sum + nums[index];
+
+            if (nums[index] == 13) {
+                sum -= nums[index];
+
+                if (index < nums.length - 1) {
+                    sum -= nums[index + 1];
+                }
+            }
+
+            index = index + 1;
+        }
+
+        return sum;
+    }
 
 
     public static void main(String[] args) {
@@ -45,7 +65,9 @@ public class Topic02WhileLoops {
         // due to overflow
         // printPowersOfTwo(maxPowerOfTwo);
 
-        printPowersOfTwoUpToSomeNumber(maxResult);
+        // printPowersOfTwoUpToSomeNumber(maxResult);
+        
+        System.out.println(sum13(new int[] {1, 2, 2, 1, 13}));
     }
 }
 
