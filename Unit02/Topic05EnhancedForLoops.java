@@ -30,6 +30,26 @@ public class Topic05EnhancedForLoops {
         return maxVal - minVal;
     }
 
+    public static int sum67(int[] nums) {
+        int sum = 0;
+        boolean summingPaused = false;
+
+        for (int item : nums) {
+            if (item == 6) {
+                summingPaused = true;
+            } else if (!summingPaused) {
+                sum = sum + item;
+            } else if (item == 7) {
+                summingPaused = false;
+            }
+        }
+
+        return sum;
+    }
+    
+
+
+
     public static void main(String[] args) {
         
     }
