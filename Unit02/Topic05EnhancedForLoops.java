@@ -76,6 +76,30 @@ public class Topic05EnhancedForLoops {
         return false;
 
     }
+
+    public static int[] post4(int[] nums) {
+        int locationOfLast4 = -1;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 4) {
+                locationOfLast4 = i;
+            }
+        }
+        //  0  1  2  3
+        // [2, 4, 1, 2]
+        // nums.length = 4;
+        // locationOfLast4 = 1
+        // new array should have size 2
+        int[] newArray = new int[nums.length - locationOfLast4 - 1];
+        int indexInNewArray = 0;
+        for (int i = locationOfLast4 + 1; i < nums.length; i++) {
+            newArray[indexInNewArray] = nums[i];
+            indexInNewArray++;
+        }
+
+        return newArray;
+    }
+      
     
 
 
