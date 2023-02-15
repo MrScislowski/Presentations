@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Topic05EnhancedForLoops {
     // enhanced for loop is superior (IMO)
     public static int bigDiff(int[] nums) {
@@ -104,6 +106,20 @@ public class Topic05EnhancedForLoops {
 
 
     public static void main(String[] args) {
-        
+        int[] nums = new int[] { 1, 2, 3, 4, 5};
+
+        // you can't modify array contents from within an enhanced for loop
+        for (int curItem : nums) {
+            curItem = 0;
+        }
+
+        System.out.println(Arrays.toString(nums));
     }
 }
+
+// all of these are on codingbat under Array-2
+// Practice exercises where enhanced for loops are appropriate:
+// sum28, only14, sum13, lucky13
+
+// Practice exercises where it's debatable:
+// haveThree, tripleUp, modThree
