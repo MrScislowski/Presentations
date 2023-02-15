@@ -30,7 +30,7 @@ public class Topic05EnhancedForLoops {
         return maxVal - minVal;
     }
 
-    public static int sum67(int[] nums) {
+    public static int sum67Enhanced(int[] nums) {
         int sum = 0;
         boolean summingPaused = false;
 
@@ -47,7 +47,36 @@ public class Topic05EnhancedForLoops {
         return sum;
     }
     
+    // enhanced for loop is not clearly the best choice
+    public static boolean has77(int[] nums) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == 7 && nums[i+1] == 7) {
+                return true;
+            } else if (i != nums.length - 2 && nums[i] == 7 && nums[i+2] == 7) {
+                return true;
+            }
+        }
+        return false;
+    }
 
+    public static boolean has77Enhanced(int[] nums) {
+        
+        int prevNum = 0;
+        int theOneBeforeThePrevious = 0;
+
+        for (int curNum : nums) {
+            if (curNum == 7 && prevNum == 7) {
+                return true;
+            } else if (curNum == 7 && theOneBeforeThePrevious == 7) {
+                return true;
+            } 
+            theOneBeforeThePrevious = prevNum;
+            prevNum = curNum;
+        }
+        return false;
+
+    }
+    
 
 
     public static void main(String[] args) {
