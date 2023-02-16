@@ -103,17 +103,23 @@ public class Topic05EnhancedForLoops {
     }
       
     
+    public static int countVowels(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.substring(i, i+1).equals("a") || 
+            str.substring(i, i+1).equals("e") || 
+            str.substring(i, i+1).equals("i") || 
+            str.substring(i, i+1).equals("o") || 
+            str.substring(i, i+1).equals("u")) {
+                count++;
+            }
+        }
+        return count;
+    }
 
 
     public static void main(String[] args) {
-        int[] nums = new int[] { 1, 2, 3, 4, 5};
-
-        // you can't modify array contents from within an enhanced for loop
-        for (int curItem : nums) {
-            curItem = 0;
-        }
-
-        System.out.println(Arrays.toString(nums));
+        System.out.println(countVowels("inanimate"));
     }
 }
 
