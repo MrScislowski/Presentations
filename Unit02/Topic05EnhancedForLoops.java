@@ -105,12 +105,9 @@ public class Topic05EnhancedForLoops {
     
     public static int countVowels(String str) {
         int count = 0;
-        for (int i = 0; i < str.length(); i++) {
-            if (str.substring(i, i+1).equals("a") || 
-            str.substring(i, i+1).equals("e") || 
-            str.substring(i, i+1).equals("i") || 
-            str.substring(i, i+1).equals("o") || 
-            str.substring(i, i+1).equals("u")) {
+        for (char letter : str.toCharArray()) {
+            if (letter == 'a' || letter =='e' || letter == 'i' || 
+            letter == 'o' || letter == 'u' ) {
                 count++;
             }
         }
@@ -119,7 +116,7 @@ public class Topic05EnhancedForLoops {
 
 
     public static void main(String[] args) {
-        System.out.println(countVowels("inanimate"));
+        System.out.println(countVowels("inanimatea"));
     }
 }
 
