@@ -3,9 +3,9 @@ import java.util.Arrays;
 public class Topic06TwoDimensionalArrays {
 
     public static void print2DArray(double[][] a) {
-        for (int r = 0; r < a.length; r++) {
-            for (int c = 0; c < a[r].length; c++) {
-                System.out.print(a[r][c]);
+        for (double[] row : a) {
+            for (double value : row) {
+                System.out.print(value);
                 System.out.print(" ");
             }
             System.out.println();
