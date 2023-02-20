@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Topic06TwoDimensionalArrays {
 
     public static void main(String[] args) {
@@ -7,10 +9,18 @@ public class Topic06TwoDimensionalArrays {
             {4, 5, 6}, 
             {7, 8, 9}};
 
-        System.out.println(a[1][2]);
-
-
         // traverse 2D square array to have all values be 1
+        final int SQSIZE = 3;
+        int[][] a2 = new int[SQSIZE][SQSIZE];
+        
+        for (int r = 0; r < SQSIZE; r++) {
+            for (int c = 0; c < SQSIZE; c++) {
+                a2[r][c] = 1;
+            }
+        }
+
+        System.out.println(Arrays.deepToString(a2));
+
 
         // traverse 2D rectangular array to have all values be 1
 
