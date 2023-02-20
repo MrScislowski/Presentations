@@ -21,10 +21,32 @@ public class Topic06TwoDimensionalArrays {
 
         System.out.println(Arrays.deepToString(a2));
 
-
         // traverse 2D rectangular array to have all values be 1
+        int[][] a3 = new int[2][7];
+
+        for (int r = 0; r < a3.length; r++) {
+            for (int c = 0; c < a3[0].length; c++) {
+                a3[r][c] = 1;
+            }
+        }
+
+        System.out.println(Arrays.deepToString(a3));
 
         // traverse 2D ragged array to have all values be 1
+        int[][] a4 = new int[][] {
+            {1, 2},
+            {3},
+            {4, 5, 6, 7}
+        };
+
+        for (int r = 0; r < a4.length; r++) {
+            for (int c = 0; c < a4[r].length; c++) {
+                a4[r][c] = 1;
+            }
+        }
+
+        System.out.println(Arrays.deepToString(a4));
+
 
         // write our own code to pring 2d array
 
