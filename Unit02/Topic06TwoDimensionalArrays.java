@@ -12,6 +12,28 @@ public class Topic06TwoDimensionalArrays {
         }
     }
 
+    public static double[][] withAverages(double[][] a) {
+        double[][] retVal = new double[a.length + 1][a[0].length + 1];
+
+        // copy in the contents of a
+        for (int r = 0; r < a.length; r++) {
+            for (int c = 0; c < a[0].length; c++) {
+                retVal[r][c] = a[r][c];
+            }
+        }
+
+        // calculate row averages
+        for (int r = 0; r < a.length; r++) {
+            double total = 0;
+            for (double value : a[r]) {
+                total += value;
+            }
+            retVal[r][retVal[r].length - 1] = total / a[r].length;
+        }
+
+        return retVal;
+    }
+
 
     public static void main(String[] args) {
         // declare and initialize 2D array
@@ -73,7 +95,7 @@ public class Topic06TwoDimensionalArrays {
                 {89, 89.5, 81}
             };
 
-        print2DArray(ss);
+        print2DArray(withAverages(ss));
 
         // withAverages
 
