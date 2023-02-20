@@ -13,41 +13,43 @@ public class Topic06TwoDimensionalArrays {
     }
 
     public static double[][] withAverages(double[][] a) {
-        double[][] retVal = new double[a.length + 1][a[0].length + 1];
+        int origRows = a.length;
+        int origCols = a[0].length;
+        double[][] augmentedArray = new double[origRows + 1][origCols + 1];
 
         // copy in the contents of a
-        for (int r = 0; r < a.length; r++) {
-            for (int c = 0; c < a[0].length; c++) {
-                retVal[r][c] = a[r][c];
+        for (int r = 0; r < origRows; r++) {
+            for (int c = 0; c < origCols; c++) {
+                augmentedArray[r][c] = a[r][c];
             }
         }
 
         // calculate row averages
-        for (int r = 0; r < a.length; r++) {
+        for (int r = 0; r < origRows; r++) {
             double total = 0;
             for (double value : a[r]) {
                 total += value;
             }
-            retVal[r][retVal[r].length - 1] = total / a[r].length;
+            augmentedArray[r][origCols] = total / origCols;
         }
 
         // calculate column averages
-        for (int c = 0; c < a[0].length; c++) {
+        for (int c = 0; c < origCols; c++) {
             double total = 0;
-            for (int r = 0; r < a.length; r++) {
+            for (int r = 0; r < origRows; r++) {
                 total += a[r][c];
             }
-            retVal[retVal.length - 1][c] = total / a.length;
+            augmentedArray[origRows][c] = total / origRows;
         }
 
         // calculate the average of averages
         double total = 0;
-        for (double values : retVal[retVal.length - 1]) {
+        for (double values : augmentedArray[origRows]) {
             total += values;
         }
-        retVal[retVal.length - 1][retVal[0].length - 1] = total / (retVal[0].length - 1);
+        augmentedArray[origRows][origCols] = total / origCols;
 
-        return retVal;
+        return augmentedArray;
     }
 
 
