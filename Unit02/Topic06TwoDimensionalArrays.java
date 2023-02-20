@@ -31,6 +31,22 @@ public class Topic06TwoDimensionalArrays {
             retVal[r][retVal[r].length - 1] = total / a[r].length;
         }
 
+        // calculate column averages
+        for (int c = 0; c < a[0].length; c++) {
+            double total = 0;
+            for (int r = 0; r < a.length; r++) {
+                total += a[r][c];
+            }
+            retVal[retVal.length - 1][c] = total / a.length;
+        }
+
+        // calculate the average of averages
+        double total = 0;
+        for (double values : retVal[retVal.length - 1]) {
+            total += values;
+        }
+        retVal[retVal.length - 1][retVal[0].length - 1] = total / (retVal[0].length - 1);
+
         return retVal;
     }
 
