@@ -2,6 +2,17 @@ import java.util.Arrays;
 
 public class Topic06TwoDimensionalArrays {
 
+    public static void print2DArray(double[][] a) {
+        for (int r = 0; r < a.length; r++) {
+            for (int c = 0; c < a[r].length; c++) {
+                System.out.print(a[r][c]);
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+
     public static void main(String[] args) {
         // declare and initialize 2D array
         int[][] a = new int[][] {
@@ -19,7 +30,7 @@ public class Topic06TwoDimensionalArrays {
             }
         }
 
-        System.out.println(Arrays.deepToString(a2));
+        // System.out.println(Arrays.deepToString(a2));
 
         // traverse 2D rectangular array to have all values be 1
         int[][] a3 = new int[2][7];
@@ -30,7 +41,7 @@ public class Topic06TwoDimensionalArrays {
             }
         }
 
-        System.out.println(Arrays.deepToString(a3));
+        // System.out.println(Arrays.deepToString(a3));
 
         // traverse 2D ragged array to have all values be 1
         int[][] a4 = new int[][] {
@@ -45,10 +56,24 @@ public class Topic06TwoDimensionalArrays {
             }
         }
 
-        System.out.println(Arrays.deepToString(a4));
+        // System.out.println(Arrays.deepToString(a4));
 
 
-        // write our own code to pring 2d array
+        // write our own code to print 2d array
+        double[][] ss = new double[][] {
+                {99, 85, 98},
+                {98, 57, 79},
+                {92, 77, 74},
+                {94, 62, 81},
+                {99, 94, 92},
+                {80, 76.5, 67},
+                {76, 58.5, 90.5},
+                {92, 66, 91},
+                {77, 70.5, 66.5},
+                {89, 89.5, 81}
+            };
+
+        print2DArray(ss);
 
         // withAverages
 
