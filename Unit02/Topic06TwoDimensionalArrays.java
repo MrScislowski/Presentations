@@ -117,6 +117,23 @@ public class Topic06TwoDimensionalArrays {
 
         // withAverages
 
+        int[][] grossRaggedArray = new int[][] {
+            {1, 2},
+            {3},
+            {4, 5, 6, 6, 7},
+            {8, 9}
+        };
+
+        // copy:
+ 
+
+        int[][] copyOfArray = new int[grossRaggedArray.length][];
+        for (int r = 0; r < grossRaggedArray.length; r++) {
+            copyOfArray[r] = new int[grossRaggedArray[r].length];
+        }
+
+        System.out.println(Arrays.deepToString(copyOfArray));
+
 
 
         // double[][] a = new double[][] {
