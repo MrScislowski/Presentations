@@ -10,8 +10,8 @@ public class School {
         int allActTotal = 0;
         int activeStudents = 0;
         for (Student curStudent : allStudents) {
-            if (curStudent.hasGraduated == false) {
-                allActTotal += curStudent.actScore;
+            if (curStudent.getGraduationStatus() == false) {
+                allActTotal += curStudent.getActScore();
                 activeStudents++;
             }
         }
