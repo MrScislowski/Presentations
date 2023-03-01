@@ -1,19 +1,8 @@
 public class School {
     public static void main(String[] args) {
-        Student s1 = new Student();
-        s1.age = 16;
-        s1.actScore = 21;
-        s1.hasGraduated = false;
-
-        Student s2 = new Student();
-        s2.age = 24;
-        s2.actScore = 29;
-        s2.hasGraduated = true;
-
-        Student s3 = new Student();
-        s3.age = 14;
-        s3.actScore = 15;
-        s3.hasGraduated = false;
+        Student s1 = new Student(16, 21, false);
+        Student s2 = new Student(24, 29, true);
+        Student s3 = new Student(14, 15, false);
 
         Student[] allStudents = new Student[] {s1, s2, s3};
 
