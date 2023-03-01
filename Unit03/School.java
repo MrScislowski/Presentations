@@ -15,7 +15,15 @@ public class School {
                 activeStudents++;
             }
         }
+
         System.out.println("There are " + activeStudents + " who have an average score of " + (double) allActTotal / activeStudents);
+
+
+        // print a summary of all (past and and current) students
+        System.out.println("Here are all the students ever:");
+        for (Student curStudent : allStudents) {
+            System.out.println(curStudent);
+        }
 
 
     }
