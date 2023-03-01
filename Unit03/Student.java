@@ -2,36 +2,48 @@ public class Student {
 
     // INSTANCE VARIABLES
     // aka fields, properties, attributes
-    private int age;
-    private int actScore;
-    private boolean hasGraduated;
+    private int allData;
 
     // CONSTRUCTOR
     public Student(int studentAge, int studentActScore, boolean studentHasGraduated) {
-        age = studentAge;
-        actScore = studentActScore;
-        hasGraduated = studentHasGraduated;
+        allData = studentAge;
+        // 16
+        allData *= 100;
+        // 1600
+        allData += studentActScore;
+        // 1624
+        allData *= 10;
+        // 16240
+        if (studentHasGraduated) {
+            allData += 1;
+        } else {
+            allData += 0;
+        }
     }
 
     // ACCESSOR METHODS
     public int getAge() {
-        return age;
+        return allData/1000;
     }
 
     public int getActScore() {
-        return actScore;
+        return (allData/10) % 100;
     }
 
     public boolean getGraduationStatus() {
-        return hasGraduated;
+        if (allData % 2 == 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     // INSTANCE METHODS
     public String toString() {
         String result = "";
-        result += age + " year old student";
-        result += " with an ACT score of " + actScore;
-        if (hasGraduated) {
+        result += getAge() + " year old student";
+        result += " with an ACT score of " + getActScore();
+        if (getGraduationStatus()) {
             result += " (former student)";
         }
 
