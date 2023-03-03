@@ -4,10 +4,16 @@ public class EarthLocation {
     private double latitude;
     private double longitude;
     
-    // CONSTRUCTOR
+    // CONSTRUCTOR(S)
     public EarthLocation(double latitude, double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    // overloaded constructor (generate a random location)
+    public EarthLocation() {
+        this.latitude = (Math.random() * 2 - 1)*90;
+        this.longitude = (Math.random() * 2 - 1)*180;
     }
 
     // INSTANCE METHOD
@@ -37,8 +43,11 @@ public class EarthLocation {
     }
 
     public static void main(String[] args) {
-        EarthLocation wichita = new EarthLocation(37.6872, -97.3301);
-        System.out.println(wichita);
+        final int NTESTS = 10;
+        for (int test = 0; test < NTESTS; test++) {
+            EarthLocation randLoc = new EarthLocation();
+            System.out.println(randLoc);
+        }
     }
 
     
