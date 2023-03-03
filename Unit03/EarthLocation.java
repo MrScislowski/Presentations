@@ -17,6 +17,24 @@ public class EarthLocation {
     }
 
     // INSTANCE METHODS
+    // accessor methods
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    // mutator methods
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
     public double distanceTo(EarthLocation other) {
         // radius of earth in miles
         final double rE = 3963.0;
