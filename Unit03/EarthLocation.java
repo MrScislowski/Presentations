@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 public class EarthLocation {
+    // STATIC VARIABLES
+    // radius of earth in miles
+    private static final double rE = 3963.0;
+    private static int numLocationsCreated = 0;
 
     // INSTANCE VARIABLES
     private double latitude;
@@ -10,6 +14,8 @@ public class EarthLocation {
     public EarthLocation(double latitude, double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
+
+        numLocationsCreated++;
     }
 
     // overloaded constructor (generate a random location)
@@ -20,6 +26,10 @@ public class EarthLocation {
 
     // INSTANCE METHODS
     // accessor methods
+    public static int getNumberOfLocationsCreated() {
+        return numLocationsCreated;
+    }
+
     public double getLatitude() {
         return latitude;
     }
@@ -38,9 +48,6 @@ public class EarthLocation {
     }
 
     public double distanceTo(EarthLocation other) {
-        // radius of earth in miles
-        final double rE = 3963.0;
-
         double lat1 = Math.toRadians(this.latitude);
         double lat2 = Math.toRadians(other.latitude);
         double lon1 = Math.toRadians(this.longitude);
@@ -155,6 +162,9 @@ public class EarthLocation {
 
         String usrResponse = "y";
 
+        EarthLocation earthOrigin = new EarthLocation(0, 0);
+        EarthLocation earthOrigin2 = EarthLocation.parseFromString("1 N, 7 E");
+
         while (usrResponse.equals("y")) {
             System.out.println("Please enter your first location geographic coordinates");
         
@@ -171,6 +181,8 @@ public class EarthLocation {
             System.out.println("Type 'y' if you would like to enter another location pair");
             usrResponse = s.nextLine();
         }
+
+        System.out.println("In your session, you created " + getNumberOfLocationsCreated() + " locations");
         
 
     }
