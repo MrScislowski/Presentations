@@ -69,6 +69,13 @@ public class EarthLocation {
         int afterLatIndex = s.indexOf("N");
         if (afterLatIndex == -1) {
             afterLatIndex = s.indexOf("S");
+            if (afterLatIndex == -1) {
+                System.err.println("Could not parse String... here's an example:");
+                System.err.println("37.6872° N, 97.3301° W");
+
+                return null;
+            }
+
             isNorth = false;
         }
         int endOfLat = afterLatIndex;
@@ -87,6 +94,12 @@ public class EarthLocation {
         int afterLonIndex = s.indexOf("E");
         if (afterLonIndex == -1) {
             afterLonIndex = s.indexOf("W");
+            if (afterLonIndex == -1) {
+                System.err.println("Could not parse String... here's an example:");
+                System.err.println("37.6872° N, 97.3301° W");
+
+                return null;
+            }
             isEast = false;
         }
         int endOfLon = afterLonIndex;
@@ -170,13 +183,22 @@ public class EarthLocation {
         
             String loc1String = s.nextLine();
             EarthLocation loc1 = parseFromString(loc1String);
+            if (loc1 == null) {
+                System.out.println("Hey, sorry about that. Couldn't parse your string");
+            }
     
             System.out.println("Please enter your second location geographic coordinates");
             String loc2String = s.nextLine();
             EarthLocation loc2 = parseFromString(loc2String);
+            if (loc2 == null) {
+                System.out.println("Hey, sorry about that. Couldn't parse your string");
+            }
     
-            System.out.println("Distance between these locations: ");
-            System.out.println(loc1.distanceTo(loc2));
+            if (loc1 != null && loc2 != null) {
+                System.out.println("Distance between these locations: ");
+                System.out.println(loc1.distanceTo(loc2));
+            }
+            
 
             System.out.println("Type 'y' if you would like to enter another location pair");
             usrResponse = s.nextLine();
