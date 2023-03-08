@@ -153,26 +153,25 @@ public class EarthLocation {
 
         Scanner s = new Scanner(System.in);
 
-        System.out.println("Please enter your first location geographic coordinates");
-        ;
-        // some scanner stuff
-        String loc1String = s.nextLine();
+        String usrResponse = "y";
 
+        while (usrResponse.equals("y")) {
+            System.out.println("Please enter your first location geographic coordinates");
         
+            String loc1String = s.nextLine();
+            EarthLocation loc1 = parseFromString(loc1String);
+    
+            System.out.println("Please enter your second location geographic coordinates");
+            String loc2String = s.nextLine();
+            EarthLocation loc2 = parseFromString(loc2String);
+    
+            System.out.println("Distance between these locations: ");
+            System.out.println(loc1.distanceTo(loc2));
 
-        EarthLocation loc1 = parseFromString(loc1String);
-        System.out.println("Please enter your second location geographic coordinates");
-        ;
-        // more scanner stuff
-        String loc2String = s.nextLine();
-        EarthLocation loc2 = parseFromString(loc2String);
-
-        System.out.println("your locations are: ");
-        System.out.println(loc1);
-        System.out.println(loc2);
-
-        System.out.println("Distance between these locations: ");
-        System.out.println(loc1.distanceTo(loc2));
+            System.out.println("Type 'y' if you would like to enter another location pair");
+            usrResponse = s.nextLine();
+        }
+        
 
     }
 
