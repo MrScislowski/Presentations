@@ -163,6 +163,29 @@ public class EarthLocation {
         return result;
     }
 
+    public boolean equals(Object otherJank) {
+        if (this == otherJank) {
+            return true;
+        }
+
+        if (otherJank == null) {
+            return false;
+        }
+
+        if (this.getClass() != otherJank.getClass()) {
+            return false;
+        }
+
+        EarthLocation other = (EarthLocation) otherJank;
+
+        if (this.latitude == other.latitude &&
+            this.longitude == other.longitude) {
+                return true;
+        } else {
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
 
         // EarthLocation kc = 39.0997° N, 94.5786° W;

@@ -22,7 +22,16 @@ public class EarthLocationTest {
         calculatedDistance = sydney.distanceTo(capeTown);
         tolerance = 100;
         assertEquals(expectedDistance, calculatedDistance, tolerance);
-
-
     }
+
+    @Test
+    public void testParseFromString() {
+        String s1 = "37.1 N, 55 W";
+        EarthLocation expected = new EarthLocation(37.1, -55);
+        EarthLocation actual = EarthLocation.parseFromString(s1);
+        assertEquals(expected, actual);
+
+        // String s2 = "37.1, -55";
+    }
+
 }
